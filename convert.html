@@ -8,6 +8,47 @@
 
 <script>
     // TODO: Your JavaScript implementation for temperature conversion goes here.
+    function convertTemperature(temperature, fromUnit, toUnit) {
+        if (fromUnit === "C" && toUnit === "F") {
+            return (temperature * 9/5) + 32;
+        }
+        else if (fromUnit === "C" && toUnit === "K") {
+            return temperature + 273.15;
+        }
+        else if (fromUnit === "F" && toUnit === "C") {
+            return (temperature - 32) * 5/9;
+        }
+        else if (fromUnit === "F" && toUnit === "K") {
+            return (temperature - 32) * 5/9 + 273.15;
+        }
+        else if (fromUnit === "K" && toUnit === "C") {
+            return temperature - 273.15;
+        }
+        else if (fromUnit === "K" && toUnit === "F") {
+            return (temperature - 273.15) * 9/5 + 32;
+        }
+        else if (fromUnit === toUnit) {
+            return temperature;
+        }
+        else {
+            return "Error";
+        }
+        
+    }
+
+    console.log(convertTemperature(35, "C", "F"));
+    console.log(convertTemperature(35, "C", "K"));
+    console.log(convertTemperature(35, "F", "C"));
+    console.log(convertTemperature(35, "F", "K"));
+    console.log(convertTemperature(35, "K", "C"));
+    console.log(convertTemperature(35, "K", "F"));
+    console.log(convertTemperature(35, "C", "C"));
+    console.log(convertTemperature(35, "F", "F"));
+    console.log(convertTemperature(35, "K", "K"));
+    console.log(convertTemperature(35, "C", "A"));
+    console.log(convertTemperature(35, "A", "C"));
+    console.log(convertTemperature(35, "A", "K"));
+
 </script>
 </body>
 </html>
